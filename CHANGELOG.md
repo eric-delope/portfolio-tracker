@@ -3,6 +3,21 @@
 All notable changes, one version per iteration. Each iteration started from user feedback on the previous one;
 the trigger is noted under *Why*. Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.7.0] – 2026-10-12 · Live demo
+
+*Why:* "a link recruiters can click without installing anything."
+
+### Added
+- **Hosted live demo** entry point (`app/streamlit_app.py`) for Streamlit Community Cloud: demo portfolio only,
+  no uploads, nothing written on the server (per-visitor watchlist, monthly note as download), offline from a
+  bundled market-data snapshot – the demo makes no request to any third party. Banner and privacy page explain it.
+- `scripts/make_demo_snapshot.py` builds the snapshot from an empty folder; `tests/test_demo_snapshot.py` fails if
+  it contains any non-demo symbol.
+
+### Changed
+- CI actions updated (checkout v5, setup-python v6) ahead of the Node 20 retirement.
+- Links in callouts are clickable.
+
 ## [1.6.0] – 2026-10-12 · Does waiting pay? · Deutsch · more brokers
 
 *Why:* "do the backtest, then a German interface, then more broker formats – and could this work with an API?"

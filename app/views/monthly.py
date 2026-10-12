@@ -176,14 +176,18 @@ with right:
 st.divider()
 note_path = c.REPORT_DIR / f"{month} Monthly report.md"
 b1, b2 = st.columns([1, 3], vertical_alignment="center")
-if b1.button("Save as Markdown note", icon=":material/edit_note:"):
+if c.HOSTED:   # the live demo writes nothing on the server – the note is offered as a download instead
+    b1.download_button("Download as Markdown note", to_markdown(rep), file_name=note_path.name,
+                       mime="text/markdown", icon=":material/edit_note:")
+elif b1.button("Save as Markdown note", icon=":material/edit_note:"):
     c.REPORT_DIR.mkdir(parents=True, exist_ok=True)
     old = note_path.read_text(encoding="utf-8") if note_path.exists() else None
     note_path.write_text(merge_notes(to_markdown(rep), old), encoding="utf-8")
     st.toast(f"Saved: {note_path.name}")
-b2.caption(f"Saves `reports/{note_path.name}` – an investment journal that also works in Obsidian. Already exists: "
-           "figures are updated, your own notes are kept." if note_path.exists() else
-           f"Saves `reports/{note_path.name}` – an investment journal that also works in Obsidian.")
+if not c.HOSTED:
+    b2.caption(f"Saves `reports/{note_path.name}` – an investment journal that also works in Obsidian. Already exists: "
+               "figures are updated, your own notes are kept." if note_path.exists() else
+               f"Saves `reports/{note_path.name}` – an investment journal that also works in Obsidian.")
 with st.expander("How to use the monthly report"):
     st.markdown(
         "1. Export your transactions (CSV) in the Trade Republic app and put the file into `data/raw/`.\n"

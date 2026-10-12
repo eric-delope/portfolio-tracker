@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "portfolio-tracker"
-version = "1.6.0"
+version = "1.7.0"
 description = "Privacy-first long-term portfolio analytics and equity valuation for broker CSV exports"
 authors = [{ name = "Eric de Lope" }]
 readme = "README.md"

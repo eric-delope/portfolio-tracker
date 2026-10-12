@@ -1214,7 +1214,17 @@
   "Generic CSV": "Allgemeines CSV-Format",
   "Load a broker export": "Broker-Export laden",
   "Trade Republic and Scalable Capital exports are recognised automatically. Any other broker: copy your transactions into the generic template (docs/IMPORT_FORMATS.md).": "Exporte von Trade Republic und Scalable Capital werden automatisch erkannt. Jeder andere Broker: Transaktionen in die allgemeine Vorlage kopieren (docs/IMPORT_FORMATS.md).",
-  "Synthetic data on real prices. Add your broker export to `data/raw/` or upload it under Settings.": "Synthetische Daten auf echten Kursen. Lege deinen Broker-Export in `data/raw/` ab oder lade ihn unter Einstellungen hoch."
+  "Synthetic data on real prices. Add your broker export to `data/raw/` or upload it under Settings.": "Synthetische Daten auf echten Kursen. Lege deinen Broker-Export in `data/raw/` ab oder lade ihn unter Einstellungen hoch.",
+  "The hosted demo: what it does with data, and how the real tool keeps yours on your own computer.": "Die Online-Demo: was sie mit Daten macht – und wie das eigentliche Tool deine Daten auf deinem Computer behält.",
+  "Synthetic data on real prices. To analyse your own portfolio, install the tool on your computer – see GitHub.": "Synthetische Daten auf echten Kursen. Für dein eigenes Depot installierst du das Tool auf deinem Computer – siehe GitHub.",
+  "Hosted live demo": "Online-Demo",
+  "Hosted demo": "Online-Demo",
+  "synthetic data only, uploads disabled": "nur synthetische Daten, Upload deaktiviert",
+  "Public demo": "Öffentliche Demo",
+  "anyone with the link": "jeder mit dem Link",
+  "Download as Markdown note": "Als Markdown-Notiz herunterladen",
+  "**Live demo** with a synthetic portfolio on real prices up to {}. Nothing you enter is saved, and the demo makes no requests to third parties. The real tool runs on your own computer with your own broker export – [code and setup on GitHub]({}).": "**Live-Demo** mit einem synthetischen Depot auf echten Kursen bis {}. Nichts, was du eingibst, wird gespeichert, und die Demo stellt keine Anfragen an Dritte. Das eigentliche Tool läuft auf deinem eigenen Computer mit deinem Broker-Export – [Code und Installation auf GitHub]({}).",
+  "**This is the hosted live demo.** It runs on Streamlit's servers with a synthetic portfolio and a bundled market-data snapshot: uploads are disabled, nothing you enter is saved, and no request goes to a third party. The real tool is installed on your own computer and reads your broker export there – [setup on GitHub]({}).": "**Das ist die Online-Demo.** Sie läuft auf Servern von Streamlit mit einem synthetischen Depot und einem mitgelieferten Marktdaten-Schnappschuss: Upload ist deaktiviert, nichts, was du eingibst, wird gespeichert, und keine Anfrage geht an Dritte. Das eigentliche Tool wird auf deinem eigenen Computer installiert und liest dort deinen Broker-Export – [Installation auf GitHub]({})."
  },
  "keep": [
   "\nCash-flow summary (EUR):",

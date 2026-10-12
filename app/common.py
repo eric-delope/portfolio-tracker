@@ -27,9 +27,12 @@ ROOT = Path(__file__).parents[1]
 RAW_DIR = ROOT / "data" / "raw"
 DEMO_CSV = ROOT / "data" / "sample" / "demo_portfolio.csv"
 DEMO_WATCHLIST = ROOT / "data" / "sample" / "demo_watchlist.json"
-CACHE_DIR = ROOT / "data" / "cache"
+CACHE_DIR = Path(os.environ.get("PORTFOLIO_CACHE_DIR", ROOT / "data" / "cache"))
+# The public live demo (app/streamlit_app.py): demo data only, offline from a bundled snapshot, nothing is written.
+HOSTED = os.environ.get("PORTFOLIO_HOSTED") == "1"
+REPO_URL = "https://github.com/eric-delope/portfolio-tracker"
 # PORTFOLIO_DEMO=1 forces the demo even when a real export exists; its watchlist is kept apart from the real one.
-FORCE_DEMO = os.environ.get("PORTFOLIO_DEMO") == "1"
+FORCE_DEMO = os.environ.get("PORTFOLIO_DEMO") == "1" or HOSTED
 WATCHLIST_FILE = Path(os.environ.get("PORTFOLIO_WATCHLIST",
                                      ROOT / "data" / "user" / ("demo_watchlist.json" if FORCE_DEMO else "watchlist.json")))
 REPORT_DIR = ROOT / "reports"
@@ -85,7 +88,8 @@ def num(x: float, decimals: int = 2) -> str:
 
 
 def bold_html(text: str) -> str:
-    """Markdown **bold** -> <b> for use inside HTML blocks (where Markdown is not parsed)."""
+    """Markdown **bold** and [links](https://…) -> HTML for use inside HTML blocks (where Markdown is not parsed)."""
+    text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2" target="_blank">\1</a>', text)
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
 
 
@@ -304,7 +308,24 @@ def research() -> Research:
     return Research(CACHE_DIR)
 
 
+def snapshot_date() -> str:
+    """Date of the market-data snapshot bundled with the live demo (written by scripts/make_demo_snapshot.py)."""
+    stamp = CACHE_DIR / "SNAPSHOT"
+    return pd.Timestamp(stamp.read_text().strip()).strftime("%d %b %Y") if stamp.exists() else "today"
+
+
+class _VisitorWatchlist(Watchlist):
+    """The live demo's watchlist: a private copy per browser session that is never written to the server."""
+
+    def save(self) -> None:
+        pass
+
+
 def watchlist() -> Watchlist:
+    if HOSTED:
+        if "_demo_watchlist" not in st.session_state:
+            st.session_state["_demo_watchlist"] = _VisitorWatchlist(DEMO_WATCHLIST)
+        return st.session_state["_demo_watchlist"]
     if not WATCHLIST_FILE.exists() and demo_mode():  # start the demo with a few valued companies
         WATCHLIST_FILE.parent.mkdir(parents=True, exist_ok=True)
         WATCHLIST_FILE.write_text(DEMO_WATCHLIST.read_text())

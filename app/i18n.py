@@ -146,7 +146,11 @@ def _translate_call(args: tuple, kwargs: dict, n_text: int, options: bool, skip_
     return args, kwargs
 
 
+_PATCHED: list[str] = []
+
+
 def _patch(name: str, n_text: int = 1, options: bool = False, skip_html: bool = False) -> None:
+    _PATCHED.append(name)
     original = getattr(DeltaGenerator, name, None)
     if original is None or getattr(original, "_i18n", False):
         return
@@ -162,6 +166,7 @@ def _patch(name: str, n_text: int = 1, options: bool = False, skip_html: bool = 
 
 
 def _patch_tables(name: str) -> None:
+    _PATCHED.append(name)
     original = getattr(DeltaGenerator, name, None)
     if original is None or getattr(original, "_i18n", False):
         return
@@ -201,8 +206,8 @@ def install() -> None:
     _patch_tables("data_editor")
     _patch_tables("dataframe")
     # st.markdown, st.tabs, … are bound to the main container when Streamlit is imported – rebind them
-    for name, value in list(vars(st).items()):
-        if getattr(value, "__self__", None) is st._main and getattr(getattr(DeltaGenerator, name, None), "_i18n", False):
+    for name in _PATCHED:   # only names we patched – touching every attribute of st triggers deprecation notices
+        if getattr(getattr(st, name, None), "__self__", None) is st._main:
             setattr(st, name, getattr(st._main, name))
 
 

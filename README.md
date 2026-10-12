@@ -117,11 +117,16 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt -e ".[dev]"
 streamlit run app/dashboard.py
 PORTFOLIO_OFFLINE=1 streamlit run app/dashboard.py   # no network at all (uses the cache of earlier runs)
+streamlit run app/streamlit_app.py                    # the live demo exactly as hosted (synthetic, offline)
 ```
 
 Without data of your own the app starts in **demo mode** (force it with `PORTFOLIO_DEMO=1 streamlit run app/dashboard.py`): a synthetic three-year portfolio (monthly deposits, ETF
 savings plans, a handful of quality stocks bought in tranches, one sale, dividends, card spending with Saveback)
 built from **real historical prices**, plus a demo watchlist. Regenerate it with `python scripts/make_demo_data.py`.
+
+**Live demo (hosted):** `app/streamlit_app.py` runs the demo portfolio offline from a bundled market-data snapshot
+(`data/demo_cache`, rebuilt with `python scripts/make_demo_snapshot.py`). Uploads are disabled, nothing is saved and no
+request goes to a third party; a test checks that the snapshot only holds demo symbols.
 
 **Your own portfolio:** in the Trade Republic app export your transactions as CSV and drop the file into `data/raw/`
 (or upload it in the sidebar). The newest file is picked up automatically. Toggle **privacy mode** in the sidebar to

@@ -65,6 +65,19 @@ No request at all. Prices, FX rates, fundamentals, dividends and company guidanc
 (whatever was last downloaded). Useful on untrusted networks, on the train, or when you simply do not want anyone
 to learn which stocks you look at.
 
+## The hosted live demo
+
+The public demo (`app/streamlit_app.py` on Streamlit Community Cloud) is a showcase, not a place for real data:
+
+- **Synthetic data only.** It always runs the demo portfolio; the upload field is removed.
+- **Nothing is saved.** Watchlist edits live in the visitor's browser session only; the monthly note is offered as a
+  download instead of being written on the server.
+- **No third-party requests.** It runs in offline mode from a bundled market-data snapshot (`data/demo_cache`).
+  The snapshot is built from an empty folder by rendering the demo once (`scripts/make_demo_snapshot.py`), and
+  `tests/test_demo_snapshot.py` fails if it ever contains a symbol that is not part of the demo – so a cache filled
+  by a real portfolio can never be published by accident.
+- Like any website, the hosting provider (Streamlit/Snowflake) sees visitors' IP addresses.
+
 ## Limits – stated honestly
 
 - **When online, Yahoo learns which ticker symbols you request** – together with your IP address, that hints at

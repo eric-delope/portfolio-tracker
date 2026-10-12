@@ -36,13 +36,14 @@ with st.sidebar:
                         help="Used for Sharpe, Sortino and alpha. Reference: ECB deposit rate or overnight savings.")
         st.number_input("Tax-free allowance (€)", 0, 2000, 1000, 100, key="allowance",
                         help="German Sparerpauschbetrag: €1,000 for singles, €2,000 for joint filers.")
-        st.file_uploader("Load a broker export", type="csv", key="upload",
-                         help="Trade Republic and Scalable Capital exports are recognised automatically. Any other "
-                              "broker: copy your transactions into the generic template (docs/IMPORT_FORMATS.md).")
-        if st.button("Reload prices", help="Clears the cache and fetches current prices."):
-            st.cache_resource.clear()
-            st.cache_data.clear()
-            (c.CACHE_DIR / "prices.pkl").unlink(missing_ok=True)
+        if not c.HOSTED:   # the live demo never accepts files – real data belongs on your own computer
+            st.file_uploader("Load a broker export", type="csv", key="upload",
+                             help="Trade Republic and Scalable Capital exports are recognised automatically. Any other "
+                                  "broker: copy your transactions into the generic template (docs/IMPORT_FORMATS.md).")
+            if st.button("Reload prices", help="Clears the cache and fetches current prices."):
+                st.cache_resource.clear()
+                st.cache_data.clear()
+                (c.CACHE_DIR / "prices.pkl").unlink(missing_ok=True)
 
 pages = st.navigation([
     st.Page("views/monthly.py", title=tr("Monthly report"), icon=":material/calendar_month:", default=True),
@@ -59,15 +60,22 @@ found = c.issues(tx, label)
 with st.sidebar:
     status = tr("Data checks passed" if not found else f"{len(found)} data issue(s) – see Methodology")
     network = tr("offline – no requests" if privacy.offline() else "prices via Yahoo Finance")
+    where = tr("Hosted live demo" if c.HOSTED else "Processed on this computer")
     count = tr(f"{len(tx)} transactions")
     source = tr(tx.attrs.get("format", "Trade Republic"))
     until = tr(f"prices to {p.last_date:%d %b %Y}")
     st.markdown((f'<span class="badge">{tr("Demo portfolio")}</span><br>' if c.demo_mode() else "")
                 + f'<div class="side-note"><b>{count}</b> · {until}<br>'
-                f'{source} · {status}<br>{tr("Processed on this computer")} · {network}</div>', unsafe_allow_html=True)
+                f'{source} · {status}<br>{where} · {network}</div>', unsafe_allow_html=True)
     if c.demo_mode():
-        st.caption("Synthetic data on real prices. Add your broker export to `data/raw/` or upload it under Settings.")
+        st.caption("Synthetic data on real prices. To analyse your own portfolio, install the tool on your computer – "
+                   "see GitHub." if c.HOSTED else
+                   "Synthetic data on real prices. Add your broker export to `data/raw/` or upload it under Settings.")
     st.caption("Light or dark: follows your system – switch under ⋮ (top right) → Settings.")
     c.sync_theme()
 
+if c.HOSTED:
+    c.callout(f"**Live demo** with a synthetic portfolio on real prices up to {c.snapshot_date()}. Nothing you "
+              f"enter is saved, and the demo makes no requests to third parties. The real tool runs on your own "
+              f"computer with your own broker export – [code and setup on GitHub]({c.REPO_URL}).", "info")
 pages.run()
