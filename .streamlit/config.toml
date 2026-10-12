@@ -1,0 +1,29 @@
+# Light and dark theme: the app follows the system setting; switch under ⋮ → Settings (or the sidebar hint).
+[theme]
+font = "sans serif"
+
+[theme.light]
+primaryColor = "#2a78d6"
+backgroundColor = "#f7f7f5"
+secondaryBackgroundColor = "#eeede9"
+textColor = "#111110"
+
+[theme.dark]
+primaryColor = "#4a90e6"
+backgroundColor = "#0f1114"
+secondaryBackgroundColor = "#1d2026"
+textColor = "#eceae6"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true
+# reachable from this computer only – not from other devices on the same Wi-Fi
+address = "localhost"
+# serves app/static (the self-hosted font)
+enableStaticServing = true
+
+[client]
+# "viewer" keeps the ⋮ menu with Settings → theme (light / dark / system), without developer options
+toolbarMode = "viewer"

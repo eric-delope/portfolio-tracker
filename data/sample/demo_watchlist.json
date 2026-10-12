@@ -1,0 +1,525 @@
+{
+ "updated": "2026-10-11",
+ "entries": [
+  {
+   "ticker": "ASML.AS",
+   "name": "ASML Holding N.V.",
+   "currency": "EUR",
+   "added": "2026-10-11",
+   "thesis": "Demo valuation generated with the tool's own scenario model.",
+   "fair_value": 1077.87,
+   "target_price": 1669.88,
+   "horizon_years": 5,
+   "required_return": 0.1,
+   "valuation_date": "2026-10-11",
+   "valuation_inputs": {
+    "eps0": 26.41,
+    "required_return": 0.1,
+    "mos": 0.15,
+    "horizon": 5,
+    "dividends": [
+     8.69415,
+     9.727528500000002,
+     10.896833325000001,
+     12.221218621050003,
+     13.7226693255165
+    ],
+    "price_at_valuation": 1601.6,
+    "base_growth": 0.12,
+    "base_pe": 35.0,
+    "scenarios": {
+     "Scenario": [
+      "Bear",
+      "Base",
+      "Bull"
+     ],
+     "Probability %": [
+      25.0,
+      50.0,
+      25.0
+     ],
+     "EPS growth % p.a.": [
+      6.0,
+      12.0,
+      17.0
+     ],
+     "Exit P/E": [
+      28.0,
+      35.0,
+      42.0
+     ]
+    }
+   },
+   "alerts": [
+    {
+     "price": 916.19,
+     "label": "Tranche 1 (−15%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.15
+    },
+    {
+     "price": 808.4,
+     "label": "Tranche 2 (−25%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.25
+    },
+    {
+     "price": 700.61,
+     "label": "Tranche 3 (−35%)",
+     "direction": "below",
+     "amount_eur": 500.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.35
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "fair_value": 1077.87,
+     "price": 1601.6,
+     "eps1": null,
+     "eps0": 26.41,
+     "base_growth": 0.12,
+     "base_pe": 35.0,
+     "required_return": 0.1
+    }
+   ],
+   "thesis_kpis": [
+    {
+     "metric": "Revenue growth",
+     "operator": ">=",
+     "threshold": 0.05
+    },
+    {
+     "metric": "Operating margin",
+     "operator": ">=",
+     "threshold": 0.321
+    }
+   ],
+   "plan": {}
+  },
+  {
+   "ticker": "V",
+   "name": "Visa Inc.",
+   "currency": "USD",
+   "added": "2026-10-11",
+   "thesis": "Demo valuation generated with the tool's own scenario model.",
+   "fair_value": 419.56,
+   "target_price": 654.17,
+   "horizon_years": 5,
+   "required_return": 0.1,
+   "valuation_date": "2026-10-11",
+   "valuation_inputs": {
+    "eps0": 12.07,
+    "required_return": 0.1,
+    "mos": 0.15,
+    "horizon": 5,
+    "dividends": [
+     2.9413,
+     3.2321470000000003,
+     3.556185130000001,
+     3.917533422700001,
+     4.320850160233001
+    ],
+    "price_at_valuation": 385.45,
+    "base_growth": 0.1,
+    "base_pe": 32.807556131282624,
+    "scenarios": {
+     "Scenario": [
+      "Bear",
+      "Base",
+      "Bull"
+     ],
+     "Probability %": [
+      25.0,
+      50.0,
+      25.0
+     ],
+     "EPS growth % p.a.": [
+      4.0,
+      10.0,
+      15.0
+     ],
+     "Exit P/E": [
+      26.2,
+      32.8,
+      39.4
+     ]
+    }
+   },
+   "alerts": [
+    {
+     "price": 356.63,
+     "label": "Tranche 1 (−15%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.15
+    },
+    {
+     "price": 314.67,
+     "label": "Tranche 2 (−25%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.25
+    },
+    {
+     "price": 272.72,
+     "label": "Tranche 3 (−35%)",
+     "direction": "below",
+     "amount_eur": 500.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.35
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "fair_value": 419.56,
+     "price": 385.45,
+     "eps1": null,
+     "eps0": 12.07,
+     "base_growth": 0.1,
+     "base_pe": 32.807556131282624,
+     "required_return": 0.1
+    }
+   ],
+   "thesis_kpis": [
+    {
+     "metric": "Revenue growth",
+     "operator": ">=",
+     "threshold": 0.05
+    },
+    {
+     "metric": "Operating margin",
+     "operator": ">=",
+     "threshold": 0.611
+    }
+   ],
+   "plan": {}
+  },
+  {
+   "ticker": "COST",
+   "name": "Costco Wholesale Corporation",
+   "currency": "USD",
+   "added": "2026-10-11",
+   "thesis": "Demo valuation generated with the tool's own scenario model.",
+   "fair_value": 740.85,
+   "target_price": 1147.15,
+   "horizon_years": 5,
+   "required_return": 0.1,
+   "valuation_date": "2026-10-11",
+   "valuation_inputs": {
+    "eps0": 20.76,
+    "required_return": 0.1,
+    "mos": 0.15,
+    "horizon": 5,
+    "dividends": [
+     6.3945,
+     6.962949,
+     7.591563630000001,
+     8.287319319300002,
+     9.058046752755002
+    ],
+    "price_at_valuation": 946.92,
+    "base_growth": 0.09,
+    "base_pe": 35.0,
+    "scenarios": {
+     "Scenario": [
+      "Bear",
+      "Base",
+      "Bull"
+     ],
+     "Probability %": [
+      25.0,
+      50.0,
+      25.0
+     ],
+     "EPS growth % p.a.": [
+      3.0,
+      9.0,
+      14.0
+     ],
+     "Exit P/E": [
+      28.0,
+      35.0,
+      42.0
+     ]
+    }
+   },
+   "alerts": [
+    {
+     "price": 629.72,
+     "label": "Tranche 1 (−15%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.15
+    },
+    {
+     "price": 555.63,
+     "label": "Tranche 2 (−25%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.25
+    },
+    {
+     "price": 481.55,
+     "label": "Tranche 3 (−35%)",
+     "direction": "below",
+     "amount_eur": 500.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.35
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "fair_value": 740.85,
+     "price": 946.92,
+     "eps1": null,
+     "eps0": 20.76,
+     "base_growth": 0.09,
+     "base_pe": 35.0,
+     "required_return": 0.1
+    }
+   ],
+   "thesis_kpis": [
+    {
+     "metric": "Revenue growth",
+     "operator": ">=",
+     "threshold": 0.05
+    },
+    {
+     "metric": "Operating margin",
+     "operator": ">=",
+     "threshold": -0.012
+    }
+   ],
+   "plan": {}
+  },
+  {
+   "ticker": "SAP.DE",
+   "name": "SAP SE",
+   "currency": "EUR",
+   "added": "2026-10-11",
+   "thesis": "Demo valuation generated with the tool's own scenario model.",
+   "fair_value": 268.92,
+   "target_price": 412.45,
+   "horizon_years": 5,
+   "required_return": 0.1,
+   "valuation_date": "2026-10-11",
+   "valuation_inputs": {
+    "eps0": 6.82,
+    "required_return": 0.1,
+    "mos": 0.15,
+    "horizon": 5,
+    "dividends": [
+     2.76875,
+     3.0701875000000003,
+     3.408614375,
+     3.7889290187500007,
+     4.2167122064375
+    ],
+    "price_at_valuation": 191.46,
+    "base_growth": 0.11,
+    "base_pe": 35.0,
+    "scenarios": {
+     "Scenario": [
+      "Bear",
+      "Base",
+      "Bull"
+     ],
+     "Probability %": [
+      25.0,
+      50.0,
+      25.0
+     ],
+     "EPS growth % p.a.": [
+      5.0,
+      11.0,
+      16.0
+     ],
+     "Exit P/E": [
+      28.0,
+      35.0,
+      42.0
+     ]
+    }
+   },
+   "alerts": [
+    {
+     "price": 228.58,
+     "label": "Tranche 1 (−15%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.15
+    },
+    {
+     "price": 201.69,
+     "label": "Tranche 2 (−25%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.25
+    },
+    {
+     "price": 174.8,
+     "label": "Tranche 3 (−35%)",
+     "direction": "below",
+     "amount_eur": 500.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.35
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "fair_value": 268.92,
+     "price": 191.46,
+     "eps1": null,
+     "eps0": 6.82,
+     "base_growth": 0.11,
+     "base_pe": 35.0,
+     "required_return": 0.1
+    }
+   ],
+   "thesis_kpis": [
+    {
+     "metric": "Revenue growth",
+     "operator": ">=",
+     "threshold": 0.05
+    },
+    {
+     "metric": "Operating margin",
+     "operator": ">=",
+     "threshold": 0.226
+    }
+   ],
+   "plan": {}
+  },
+  {
+   "ticker": "ADYEN.AS",
+   "name": "Adyen N.V.",
+   "currency": "EUR",
+   "added": "2026-10-11",
+   "thesis": "Demo valuation generated with the tool's own scenario model.",
+   "fair_value": 1522.32,
+   "target_price": 2565.19,
+   "horizon_years": 5,
+   "required_return": 0.11,
+   "valuation_date": "2026-10-11",
+   "valuation_inputs": {
+    "eps0": 35.58,
+    "required_return": 0.11,
+    "mos": 0.15,
+    "horizon": 5,
+    "dividends": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "price_at_valuation": 886.1,
+    "base_growth": 0.15,
+    "base_pe": 35.0,
+    "scenarios": {
+     "Scenario": [
+      "Bear",
+      "Base",
+      "Bull"
+     ],
+     "Probability %": [
+      25.0,
+      50.0,
+      25.0
+     ],
+     "EPS growth % p.a.": [
+      9.0,
+      15.0,
+      20.0
+     ],
+     "Exit P/E": [
+      28.0,
+      35.0,
+      42.0
+     ]
+    }
+   },
+   "alerts": [
+    {
+     "price": 1293.97,
+     "label": "Tranche 1 (−15%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.15
+    },
+    {
+     "price": 1141.74,
+     "label": "Tranche 2 (−25%)",
+     "direction": "below",
+     "amount_eur": 400.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.25
+    },
+    {
+     "price": 989.51,
+     "label": "Tranche 3 (−35%)",
+     "direction": "below",
+     "amount_eur": 500.0,
+     "active": true,
+     "triggered_at": null,
+     "rel_to_fair": -0.35
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "fair_value": 1522.32,
+     "price": 886.1,
+     "eps1": null,
+     "eps0": 35.58,
+     "base_growth": 0.15,
+     "base_pe": 35.0,
+     "required_return": 0.11
+    }
+   ],
+   "thesis_kpis": [
+    {
+     "metric": "Revenue growth",
+     "operator": ">=",
+     "threshold": 0.05
+    },
+    {
+     "metric": "Operating margin",
+     "operator": ">=",
+     "threshold": 0.386
+    }
+   ],
+   "plan": {}
+  }
+ ]
+}

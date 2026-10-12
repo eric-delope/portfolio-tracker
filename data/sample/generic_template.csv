@@ -1,0 +1,8 @@
+date,type,isin,name,shares,price,amount,fee,tax,currency
+2025-01-02,deposit,,,,,1000.00,,,EUR
+2025-01-03,buy,IE00B4L5Y983,iShares Core MSCI World,4,75.25,,1.00,,EUR
+2025-01-10,buy,NL0010273215,ASML Holding,1,650.00,,1.00,,EUR
+2025-03-01,dividend,NL0010273215,ASML Holding,,,1.52,,0.40,EUR
+2025-04-01,sell,NL0010273215,ASML Holding,0.5,700.00,,1.00,12.00,EUR
+2025-04-30,interest,,,,,2.10,,,EUR
+2025-05-02,withdrawal,,,,,200.00,,,EUR

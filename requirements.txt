@@ -1,0 +1,11 @@
+# Pinned versions the app is tested with (also used by Streamlit Community Cloud).
+# Library users: see the looser ranges in pyproject.toml.
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+yfinance==1.7.0
+plotly==7.1.0
+streamlit==1.65.0
+reportlab==5.0.1
+requests==2.34.2
+beautifulsoup4==4.15.0

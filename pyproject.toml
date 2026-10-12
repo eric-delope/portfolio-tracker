@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-tracker"
+version = "1.6.0"
+description = "Privacy-first long-term portfolio analytics and equity valuation for broker CSV exports"
+authors = [{ name = "Eric de Lope" }]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "yfinance>=0.2.50",
+    "plotly>=5.20",
+    "streamlit>=1.50",
+    "reportlab>=4.0",
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+]
+
+[project.urls]
+Repository = "https://github.com/eric-delope/portfolio-tracker"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+
+[tool.ruff]
+line-length = 135
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = [
+    "E731",   # small lambdas as named helpers are fine
+    "B023",   # loop variables in Streamlit callbacks are bound on purpose
+    "B905",   # zip() without strict= – lengths are checked where it matters
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["portfolio_tracker", "charts", "common", "widgets", "sections"]

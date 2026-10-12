@@ -1,0 +1,17 @@
+# Never commit real portfolio data
+data/raw/
+*.csv
+!data/sample/*.csv
+
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+data/processed/
+data/cache/
+data/user/
+reports/
+*.egg-info/
+
+# personal notes, never published
+CV_BULLETS.md
