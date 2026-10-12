@@ -5,7 +5,6 @@ needs a decision or more data.
 
 ## Now
 
-- [ ] **Live demo** on Streamlit Community Cloud – demo mode only (`PORTFOLIO_DEMO=1`), server binding overridden for that deployment, never with real data.
 
 ## Next
 
@@ -29,4 +28,4 @@ needs a decision or more data.
 
 See the [CHANGELOG](CHANGELOG.md): import → analytics → monthly routine → long-term entry discipline → guided
 valuation → reverse DCF and guidance → UX → public release → planning and look-through → entry backtest,
-German UI and more brokers.
+German UI and more brokers → live demo (https://longview-portfolio.streamlit.app).

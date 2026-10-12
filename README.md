@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.12%20%7C%203.14-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 ![Privacy: local-first](https://img.shields.io/badge/privacy-local--first%20%C2%B7%20offline%20mode-0e7a4f)
+[![Live demo](https://img.shields.io/badge/live%20demo-open%20in%20browser-ff4b4b?logo=streamlit&logoColor=white)](https://longview-portfolio.streamlit.app)
 
 **Privacy-first, long-term portfolio analytics and entry planning for broker CSV exports – Trade Republic, Scalable Capital or any broker via a generic template. English or German UI.**
 
@@ -14,6 +15,9 @@ on my list?*
 
 It is a Python package with a tested analytics core (performance, risk, ETF look-through, Monte Carlo planning,
 German taxes, valuation, reverse DCF, guidance extraction) and a Streamlit dashboard on top. It runs on a synthetic demo portfolio out of the box.
+
+> ▶️ **[Try the live demo](https://longview-portfolio.streamlit.app)** – a synthetic portfolio in your browser, nothing to install. It runs offline from a
+> bundled data snapshot: no uploads, nothing saved, no third-party requests.
 
 > 🔒 **Your financial data never leaves your computer.** No account, no upload, no cloud. Names and IBANs are dropped
 > on import, the only requests go out for public ticker prices – each one is logged in the app – and offline mode
